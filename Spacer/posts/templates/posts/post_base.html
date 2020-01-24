@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body_block %}
 <div class="posts-page">
     <div class="container">
-        <div class="row">
+
+
+        <!-- <div class="row"> -->
             {% block prepost %}{% endblock prepost %}
             {% block post_content %}{% endblock post_content %}
             {% block post_post %}{% endblock post_post %}
-        </div>
+        <!-- </div> -->
     </div>
 </div>
   
-{% endblock content %}
+{% endblock body_block %}

@@ -16,12 +16,12 @@
             <a class="navbar-brand mynav" href="{% url 'home' %}">Spacer</a>
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="#">Post</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Groups</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Create Group</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'posts:create' %}">Post</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'groups:create' %}">Create Group</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
-                <li class="nav-item"><a href="#" class="nav-link">Groups</a></li>
+                <li class="nav-item"><a href="{% url 'groups:all' %}" class="nav-link">Groups</a></li>
                 <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link">Log In</a></li>
                 <li class="nav-item"><a href="{% url 'accounts:signup' %}" class="nav-link">Sign Up</a></li>
                 {% endif %}
