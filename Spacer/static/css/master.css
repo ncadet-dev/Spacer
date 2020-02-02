@@ -24,6 +24,10 @@ body {
   font-family: Arial;
 }
 
-a {
-    text-decoration: none;
+a.nav-link{
+
+}
+
+a.nav-link:hover{
+  color:white;
 }
