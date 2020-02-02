@@ -28,7 +28,7 @@ SECRET_KEY = 'm3n%)-nayf+0v9$25#!l3t#eoi9122)5d)d0iic32wt%&-9ouv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1:8000", "dkdence.pythonanywhere.com"]
 
 
 # Application definition
