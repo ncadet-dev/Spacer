@@ -6,6 +6,8 @@ var canvas = document.getElementById('canvas'),
   window.mozRequestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.msRequestAnimationFrame;
+canvas.width = window.innerWidth;
+canvas.height = innerHeight;
 var persons = [],
   numberOfFirefly = 30,
   birthToGive = 25;
