@@ -1,6 +1,17 @@
 body{
     margin: 0;
-    overflow: hidden;
-    background-color: #141313;
+    background-color: #0d0a0e;
     color: white;
+}
+
+.card{
+    color: black;
+    margin-bottom: 1em;
+}
+.group-list{
+    color: black;
+}
+
+#canvas{
+    overflow: hidden;
 }

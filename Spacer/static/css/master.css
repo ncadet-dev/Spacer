@@ -1,16 +1,3 @@
-.mycontent{
-    padding-top: 100px;
-    border: 10px solid red;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: #2f294f;
-  margin: 0;
-}
 
 #note {
   position: absolute;
@@ -22,12 +9,4 @@ body {
   text-align: center;
   user-select: none;
   font-family: Arial;
-}
-
-a.nav-link{
-
-}
-
-a.nav-link:hover{
-  color:white;
 }

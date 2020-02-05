@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from django.core.validators import validate_slug
+
 # Create your models here.
 import misaka
 
@@ -11,10 +13,10 @@ from django import template
 register = template.Library()
 
 class Group(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=100, unique=True, validators=[validate_slug])
     slug = models.SlugField(allow_unicode=True, unique=True)
-    description = models.TextField(blank=True, default='')
-    description_html = models.TextField(editable=False, default='', blank=True)
+    description = models.TextField(max_length=500, blank=True, default='', validators=[validate_slug])
+    description_html = models.TextField(max_length=500, editable=False, default='', blank=True, validators=[validate_slug])
     members = models.ManyToManyField(User, through='GroupMember')
 
     def __str__(self):

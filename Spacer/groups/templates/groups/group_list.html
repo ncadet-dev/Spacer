@@ -20,30 +20,38 @@
 
 {% block group_content %}
   <div class="col-md-8">
-    <div class="list-group">
-        {% for group in group_list  %}
-        <a href="{% url 'groups:single' slug=group.slug %}" class="shadow p-1 mb-1 bg-white rounded card list-group-item">
-            <h3 class="card-title list-group-item-heading">{{group.name}}</h3>
-            <div class="card-text list-group-item-text container-fluid">
-                {{group.description_html|safe}}
-                <div class="row">
-                    <div class="col-md-4">
-                        <span class="badge badge-light">{{group.members.count}}</span>
-                        member{{group.members.count|pluralize}}
-                    </div>
-                    <div class="col-md-4">
-                        <span class="badge badge-light">{{group.posts.count}}</span>
-                        post{{group.posts.count|pluralize}}
-                    </div>
+      {% for group in group_list %}
+      <a href="{% url 'groups:single' slug=group.slug %}">
+        <div class="card">
+            <div class="card-header">
+                <h4>{{group.name|safe}}</h4>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{group.description_html|safe|truncatechars:200}}</p>
+                </blockquote>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <span class="badge badge-light">{{group.members.count}}</span> member{{group.members.count|pluralize}}
+                </div>
+                <div class="col-sm-6">
+                    <span class="badge badge-light">{{group.posts.count}}</span> post{{group.posts.count|pluralize}}
                 </div>
             </div>
-        </a> 
+        </div>
         {% empty %}
         <p>No group was created!</p>
+       </a>
+       {% endfor %}
 
-          {% endfor %}
 
-      </div>
+
+
+
+
+
+
   </div>
 {% endblock group_content %}
 </div>

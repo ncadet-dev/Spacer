@@ -28,9 +28,9 @@
 {% endblock %}
 
 {% block post_content %}
-  <div class="col-md-8 ml-auto">
-      {% for post in post_list %}
-        {% include "posts/_post.html" %}
-      {% endfor %}
-  </div>
+  {% for post in post_list %}
+    <div class="col-md-8 ml-auto">
+      {% include "posts/_post.html" %}
+    </div>
+  {% endfor %}
 {% endblock post_content %}
